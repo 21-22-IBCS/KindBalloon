@@ -2,14 +2,14 @@ def N(Num):
     a = 0
     c = 1000
     for i in range (len(Num)):
-        a = i
+        a = i 
         c = Num[i]
-        for b in range (len(Num) - i):
-            if (Num[i] > Num[i+b]):
+        for b in range (len(Num) - i): #loops on non sorted list
+            if (Num[i] > Num[i+b]): 
                 if (Num [i+b] < c):
                     c = Num[i+b]
                     a = i + b
-        Num[a] = Num[i]
+        Num[a] = Num[i] 
         Num[i] = c
     return Num
 
