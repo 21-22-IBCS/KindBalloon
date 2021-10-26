@@ -43,10 +43,12 @@ def main():
 
     a = 1
 
-    n = [100,500,1000,1500,2000]
+    n = [100,500,600,1000,1500]
     
     listOfDifferences = []
     listOfDifferences2 = []
+    listOfM = []
+    listOfS = []
 
     for e in range(len(n)):
         a = 1
@@ -81,6 +83,7 @@ def main():
             total = total + dif
             a = a + 1
         avgTime = total/10
+        listOfM.append(avgTime)
         print("\nThe average time to sort the list of merge sort " + str(n[e]) + " was " + str(avgTime) + " seconds.\n")
         for p in range(len(listOfDifferences)):
             listOfDifferences.pop(0)
@@ -92,10 +95,13 @@ def main():
             total2 = total2 + dif2
             a = a + 1
         avgTime2 = total2/10
+        listOfS.append(avgTime2)
         print("\nThe average time to sort the list of selection sort " + str(n[e]) + " was " + str(avgTime2) + " seconds.\n")
         for p in range(len(listOfDifferences2)):
             listOfDifferences2.pop(0)
-
-
+    print("Time of Sorting Averages!!!\n \nLength of List            Merge Sort                     Selection Sort")
+    for d in range(len(n)):
+        print(str(n[d]) + "                " + str(listOfM[d]) + "                " + str(listOfS[d]))
+        
 if __name__ == "__main__":
     main()
