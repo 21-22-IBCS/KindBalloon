@@ -67,7 +67,7 @@ def main():
 
             test2 = []
             for i in range(n[e]):
-                test1.append(random.randint(1,n[e]))
+                test2.append(random.randint(1,n[e]))
             
             start2 = time.time()
             selectionSort(test2)
@@ -85,14 +85,14 @@ def main():
         for p in range(len(listOfDifferences)):
             listOfDifferences.pop(0)
 
-        total = 0
+        total2 = 0
         a = 1
-        for dif in listOfDifferences2:
-            print("#" + str(a) + " of selection sort " + str(n[e]) + ": " + str(dif) + " seconds.")
-            total = total + dif
+        for dif2 in listOfDifferences2:
+            print("#" + str(a) + " of selection sort " + str(n[e]) + ": " + str(dif2) + " seconds.")
+            total2 = total2 + dif2
             a = a + 1
-        avgTime = total/10
-        print("\nThe average time to sort the list of selection sort " + str(n[e]) + " was " + str(avgTime) + " seconds.\n")
+        avgTime2 = total2/10
+        print("\nThe average time to sort the list of selection sort " + str(n[e]) + " was " + str(avgTime2) + " seconds.\n")
         for p in range(len(listOfDifferences2)):
             listOfDifferences2.pop(0)
 
