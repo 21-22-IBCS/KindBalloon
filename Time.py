@@ -26,6 +26,7 @@ def mergeSort(li2):
             j += 1
             k += 1
 
+
 def selectionSort(li):
     sortedList = []
     while len(li) > 0:
@@ -38,7 +39,6 @@ def selectionSort(li):
 
     return sortedList
 
-
 def main():
 
     a = 1
@@ -46,6 +46,7 @@ def main():
     n = [100,500,1000,1500,2000]
     
     listOfDifferences = []
+    listOfDifferences2 = []
 
     for e in range(len(n)):
         a = 1
@@ -59,20 +60,42 @@ def main():
                 test1.append(random.randint(1,n[e]))
             
             start = time.time()
-            selectionSort(test1)
+            mergeSort(test1)
             stop = time.time()
             difference = stop - start
             listOfDifferences.append(difference)
+
+            test2 = []
+            for i in range(n[e]):
+                test1.append(random.randint(1,n[e]))
+            
+            start2 = time.time()
+            selectionSort(test2)
+            stop2 = time.time()
+            difference2 = stop2 - start2
+            listOfDifferences2.append(difference2)
        
         total = 0
         for dif in listOfDifferences:
-            print("#" + str(a) + " of " + str(n[e]) + ": " + str(dif) + " seconds.")
+            print("#" + str(a) + " of merge sort " + str(n[e]) + ": " + str(dif) + " seconds.")
             total = total + dif
             a = a + 1
         avgTime = total/10
-        print("\nThe average time to sort the list of " + str(n[e]) + " was " + str(avgTime) + " seconds.\n")
+        print("\nThe average time to sort the list of merge sort " + str(n[e]) + " was " + str(avgTime) + " seconds.\n")
         for p in range(len(listOfDifferences)):
             listOfDifferences.pop(0)
+
+        total = 0
+        a = 1
+        for dif in listOfDifferences2:
+            print("#" + str(a) + " of selection sort " + str(n[e]) + ": " + str(dif) + " seconds.")
+            total = total + dif
+            a = a + 1
+        avgTime = total/10
+        print("\nThe average time to sort the list of selection sort " + str(n[e]) + " was " + str(avgTime) + " seconds.\n")
+        for p in range(len(listOfDifferences2)):
+            listOfDifferences2.pop(0)
+
 
 if __name__ == "__main__":
     main()
